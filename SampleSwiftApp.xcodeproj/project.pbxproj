@@ -14,6 +14,7 @@
 		D9F10E7B2A77374300AA2725 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9F10E7A2A77374300AA2725 /* Assets.xcassets */; };
 		D9F10E7E2A77374300AA2725 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9F10E7C2A77374300AA2725 /* LaunchScreen.storyboard */; };
 		D9F10E862A774BC300AA2725 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F10E852A774BC300AA2725 /* ViewController.swift */; };
+		D9F10E8A2A774E2900AA2725 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F10E892A774E2900AA2725 /* MainController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		D9F10E7D2A77374300AA2725 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D9F10E7F2A77374300AA2725 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9F10E852A774BC300AA2725 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D9F10E892A774E2900AA2725 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				D9F10E7C2A77374300AA2725 /* LaunchScreen.storyboard */,
 				D9F10E7F2A77374300AA2725 /* Info.plist */,
 				D9F10E772A77374100AA2725 /* SampleSwiftApp.xcdatamodeld */,
+				D9F10E892A774E2900AA2725 /* MainController.swift */,
 			);
 			path = SampleSwiftApp;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 				D9F10E712A77374100AA2725 /* SceneDelegate.swift in Sources */,
 				D9F10E862A774BC300AA2725 /* ViewController.swift in Sources */,
 				D9F10E792A77374100AA2725 /* SampleSwiftApp.xcdatamodeld in Sources */,
+				D9F10E8A2A774E2900AA2725 /* MainController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
