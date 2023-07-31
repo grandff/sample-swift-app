@@ -8,6 +8,14 @@
 import UIKit
 
 class MemoListTableViewController: UITableViewController {
+    // 날짜 포멧 설정
+    let formatter: DateFormatter = {
+       let f = DateFormatter()
+        f.dateStyle = .long
+        f.timeStyle = .short
+        f.locale = Locale(identifier: "Ko_kr")  // 한국 날짜
+        return f
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +48,7 @@ class MemoListTableViewController: UITableViewController {
         // 더미데이터 출력
         let target = MemoModel.dummyMemoList[indexPath.row]
         cell.textLabel?.text = target.content
-        cell.detailTextLabel?.text = target.insetDate.description
+        cell.detailTextLabel?.text = formatter.string(from: target.insetDate)   // 날짜 포멧팅 설정
 
         return cell
     }

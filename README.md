@@ -83,10 +83,19 @@ MVVM 패턴으로 도전
 4. 데이터 소스 구현
 5. 델리게이트 구현
 
+### 9. 원하는 포멧으로 날짜 출력하기
+
+- 날짜 포멧팅 설정 후 변경
+
 ### (번외) 웹뷰 셋팅
 
 1. Webkit.framework 추가
 ![webview 설정](images/webview_1.png)
+
+2. WebView 연결
+
+- 스토리보드와 컨트롤러를 같이 열고, webview를 컨트롤러로 드래그 하면 연결됨
+![widget 연결](images/webview_2.png)
 
 ## 소스구조
 

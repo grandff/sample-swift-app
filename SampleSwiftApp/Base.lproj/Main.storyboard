@@ -85,6 +85,10 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="more" id="cnI-dL-NHr"/>
+                    <connections>
+                        <outlet property="gg" destination="KNa-ae-Gho" id="MYg-NL-w2j"/>
+                        <outlet property="webView" destination="KNa-ae-Gho" id="0lB-HX-ZGh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V0c-zM-0BH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
