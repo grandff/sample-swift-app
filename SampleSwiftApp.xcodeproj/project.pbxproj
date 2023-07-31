@@ -14,6 +14,8 @@
 		D9F10E7B2A77374300AA2725 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9F10E7A2A77374300AA2725 /* Assets.xcassets */; };
 		D9F10E7E2A77374300AA2725 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9F10E7C2A77374300AA2725 /* LaunchScreen.storyboard */; };
 		D9F10E8A2A774E2900AA2725 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F10E892A774E2900AA2725 /* MainController.swift */; };
+		D9F10E8F2A77739B00AA2725 /* MemoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F10E8E2A77739B00AA2725 /* MemoModel.swift */; };
+		D9F10E922A77751B00AA2725 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F10E912A77751B00AA2725 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		D9F10E7D2A77374300AA2725 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D9F10E7F2A77374300AA2725 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9F10E892A774E2900AA2725 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		D9F10E8E2A77739B00AA2725 /* MemoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoModel.swift; sourceTree = "<group>"; };
+		D9F10E912A77751B00AA2725 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,8 @@
 		D9F10E6D2A77374100AA2725 /* SampleSwiftApp */ = {
 			isa = PBXGroup;
 			children = (
+				D9F10E8D2A77737700AA2725 /* webview */,
+				D9F10E8C2A77737100AA2725 /* memo */,
 				D9F10E6E2A77374100AA2725 /* AppDelegate.swift */,
 				D9F10E702A77374100AA2725 /* SceneDelegate.swift */,
 				D9F10E742A77374100AA2725 /* Main.storyboard */,
@@ -68,6 +74,38 @@
 				D9F10E892A774E2900AA2725 /* MainController.swift */,
 			);
 			path = SampleSwiftApp;
+			sourceTree = "<group>";
+		};
+		D9F10E8B2A77734900AA2725 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				D9F10E8E2A77739B00AA2725 /* MemoModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		D9F10E8C2A77737100AA2725 /* memo */ = {
+			isa = PBXGroup;
+			children = (
+				D9F10E8B2A77734900AA2725 /* model */,
+			);
+			path = memo;
+			sourceTree = "<group>";
+		};
+		D9F10E8D2A77737700AA2725 /* webview */ = {
+			isa = PBXGroup;
+			children = (
+				D9F10E902A7774CC00AA2725 /* views */,
+			);
+			path = webview;
+			sourceTree = "<group>";
+		};
+		D9F10E902A7774CC00AA2725 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				D9F10E912A77751B00AA2725 /* WebViewController.swift */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +179,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9F10E8F2A77739B00AA2725 /* MemoModel.swift in Sources */,
+				D9F10E922A77751B00AA2725 /* WebViewController.swift in Sources */,
 				D9F10E6F2A77374100AA2725 /* AppDelegate.swift in Sources */,
 				D9F10E712A77374100AA2725 /* SceneDelegate.swift in Sources */,
 				D9F10E792A77374100AA2725 /* SampleSwiftApp.xcdatamodeld in Sources */,

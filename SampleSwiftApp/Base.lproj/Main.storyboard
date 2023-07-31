@@ -40,10 +40,10 @@
             </objects>
             <point key="canvasLocation" x="1118.320610687023" y="-55.633802816901408"/>
         </scene>
-        <!--View Controller-->
+        <!--Web View Controller-->
         <scene sceneID="ywx-dW-oCv">
             <objects>
-                <viewController id="Ryq-G0-ZnK" sceneMemberID="viewController">
+                <viewController id="Ryq-G0-ZnK" customClass="WebViewController" customModule="SampleSwiftApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v7Q-gM-0vk">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
