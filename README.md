@@ -18,6 +18,33 @@ Sample Swift 기반 모바일웹앱
 - 앱 아이콘의 경우 AppIcon에 넣어놨음
 - xcode14부터는 1024x1024 하나로 통일됐음
 
+### 4. Launch Screen
+
+- 앱 실행 시 잠깐 동안 보이는 화면
+- splash로 쓸 화면을 Assets 폴더에 드래그 하기
+- 이후 2x로 드래그 하기
+![Splash 이미지 추가](images/launch_screen_1.png)
+
+- launch screen storyboard로 가서 spalsh 화면 구성
+- library를 통해 추가하는 방식으로 진행함 (shift+cmd+L)
+
+- image view에서 image 탭을 통해 이미지 추가
+![image view 설정](images/launch_screen_2.png)
+
+- label은 적당한 텍스트로 수정
+- 다 했으면 storyboard 하단의 버튼 중 가장 마지막인 'Embeded In' 을 눌러서 Stack View로 변경
+![stack view](images/launch_screen_3.png)
+
+- stack view를 클릭 해서 각종 옵션 수정 가닝
+  - Alignment : 정렬
+  - Spacing : 위젯간 간격
+- image view 클릭 후 제약조건 추가 가능 (가운데정렬)
+  - 하단 버튼의 세번째
+  - width, height를 256으로 설정하고 체크 하면 가운데 정렬
+- 위젯의 제약조건 추가 (가운데정렬)
+  - 하단 버튼의 두번째
+  - horizontal, vertical을 모두 체크하면 가운데 정렬
+
 ## 소스구조
 
 ## TODO LIST
