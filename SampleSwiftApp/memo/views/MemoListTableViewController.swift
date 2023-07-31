@@ -33,7 +33,7 @@ class MemoListTableViewController: UITableViewController {
         return MemoModel.dummyMemoList.count
     }
 
-    
+    // cell이 생성될때마다 호출됨
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) // 아까 설정한 identifier로 설정
         
