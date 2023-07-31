@@ -45,6 +45,18 @@ Sample Swift 기반 모바일웹앱
   - 하단 버튼의 두번째
   - horizontal, vertical을 모두 체크하면 가운데 정렬
 
+### 5. Main Layout
+
+- 메인 레이아웃 구성하기
+- 기본으로 설정된 ViewController는 제거하고 Navigation Controller 추가하기 (스토리보드에서 shift+cmd+L를 통해 추가했음)
+![new controller add](images/main_layout_1.png)
+
+- 위 과정까지 하고 실행하면 검은화면이 나올텐데 앱 최초 화면을 설정안해서 그럴 확률이 매우 높음
+- story board에서 is initail view controller에 꼭 체크하기
+
+- 제목 변경, 버튼 추가, 라지 타이틀 모드 설정, 추가적으로 탭바 컨트롤러를 만들어서 두개로 만듬 (샘플 앱은 웹뷰까지 넣을것이므로...)
+![여기까지 완성본](images/main_layout_2.png)
+
 ## 소스구조
 
 ## TODO LIST
