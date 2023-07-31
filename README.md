@@ -63,7 +63,20 @@ MVVM 패턴으로 도전
 
 - 메모 처리에 사용할 클래스 생성
 
+### 7. 메모 목록 구현
+
+- 메모 목록을 보여줄거임
+- prototype cell에서 디자인 수정 (서브타이틀 추가하는걸로)
+- 각 위젯의 identifier를 설정할 수 있는데 무조건 겹치면 안됨
+
+- 메모 목록을 구현하기 위해 cocoa touch class를 생성하고 UITableViewController를 상속받는 컨트롤러 생성
+- 생성한 Controller와 뷰 화면을 연결하기
+![컨트롤러와 연결](images/memolist_1.png)
+
 ### (번외) 웹뷰 셋팅
+
+1. Webkit.framework 추가
+![webview 설정](images/webview_1.png)
 
 ## 소스구조
 
@@ -74,3 +87,7 @@ MVVM 패턴으로 도전
 [ ] 바텀탭네비게이션 설정
 
 [ ] 웹뷰 화면 설정
+
+[ ] 기본 CRUD 처리
+
+[ ] 웹뷰와 자바스크립트로 통신

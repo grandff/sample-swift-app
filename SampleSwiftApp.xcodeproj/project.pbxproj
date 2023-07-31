@@ -16,6 +16,8 @@
 		D9F10E8A2A774E2900AA2725 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F10E892A774E2900AA2725 /* MainController.swift */; };
 		D9F10E8F2A77739B00AA2725 /* MemoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F10E8E2A77739B00AA2725 /* MemoModel.swift */; };
 		D9F10E922A77751B00AA2725 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F10E912A77751B00AA2725 /* WebViewController.swift */; };
+		D9F10E992A77986100AA2725 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F10E942A77956A00AA2725 /* WebKit.framework */; };
+		D9F10E9C2A779F4100AA2725 /* MemoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F10E9B2A779F4100AA2725 /* MemoListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		D9F10E892A774E2900AA2725 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		D9F10E8E2A77739B00AA2725 /* MemoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoModel.swift; sourceTree = "<group>"; };
 		D9F10E912A77751B00AA2725 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		D9F10E942A77956A00AA2725 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		D9F10E9B2A779F4100AA2725 /* MemoListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9F10E992A77986100AA2725 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +53,7 @@
 			children = (
 				D9F10E6D2A77374100AA2725 /* SampleSwiftApp */,
 				D9F10E6C2A77374100AA2725 /* Products */,
+				D9F10E932A77956A00AA2725 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,6 +93,7 @@
 		D9F10E8C2A77737100AA2725 /* memo */ = {
 			isa = PBXGroup;
 			children = (
+				D9F10E9A2A779F1F00AA2725 /* views */,
 				D9F10E8B2A77734900AA2725 /* model */,
 			);
 			path = memo;
@@ -104,6 +111,22 @@
 			isa = PBXGroup;
 			children = (
 				D9F10E912A77751B00AA2725 /* WebViewController.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		D9F10E932A77956A00AA2725 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D9F10E942A77956A00AA2725 /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D9F10E9A2A779F1F00AA2725 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				D9F10E9B2A779F4100AA2725 /* MemoListTableViewController.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -185,6 +208,7 @@
 				D9F10E712A77374100AA2725 /* SceneDelegate.swift in Sources */,
 				D9F10E792A77374100AA2725 /* SampleSwiftApp.xcdatamodeld in Sources */,
 				D9F10E8A2A774E2900AA2725 /* MainController.swift in Sources */,
+				D9F10E9C2A779F4100AA2725 /* MemoListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
