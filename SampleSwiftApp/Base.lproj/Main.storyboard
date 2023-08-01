@@ -49,12 +49,51 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="This is Memo" id="ak9-Xk-Npf">
-                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="SGo-EO-9t9"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="SGo-EO-9t9">
+                            <connections>
+                                <segue destination="CDh-N5-LBS" kind="presentation" id="H7a-12-W5E"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Mc-VM-lj0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1118.320610687023" y="-55.633802816901408"/>
+        </scene>
+        <!--새 메모-->
+        <scene sceneID="Rme-3a-wgA">
+            <objects>
+                <viewController id="Fd9-fe-i2a" customClass="ComposeViewController" customModule="SampleSwiftApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nex-9d-SDX">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6cc-8K-Sny">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="GFf-QW-uGE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6cc-8K-Sny" firstAttribute="bottom" secondItem="GFf-QW-uGE" secondAttribute="bottom" id="Lzi-p8-WMa"/>
+                            <constraint firstItem="6cc-8K-Sny" firstAttribute="top" secondItem="nex-9d-SDX" secondAttribute="top" id="Srk-ly-O78"/>
+                            <constraint firstItem="6cc-8K-Sny" firstAttribute="trailing" secondItem="GFf-QW-uGE" secondAttribute="trailing" id="Vmy-Ka-YKw"/>
+                            <constraint firstItem="6cc-8K-Sny" firstAttribute="leading" secondItem="GFf-QW-uGE" secondAttribute="leading" id="ohY-s2-Eay"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="새 메모" id="l2t-uV-nEd">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="iy8-dQ-EwC"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Mpx-gT-OQC"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L9b-G3-kbW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2965.6488549618321" y="-605.63380281690149"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="ywx-dW-oCv">
@@ -117,6 +156,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Uvy-MZ-bFH" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6CE-Ej-J1F">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -129,8 +169,30 @@
             </objects>
             <point key="canvasLocation" x="-680.15267175572512" y="178.87323943661974"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qzP-dx-gUM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CDh-N5-LBS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="dNP-al-lPE"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aMc-Bl-guD">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Fd9-fe-i2a" kind="relationship" relationship="rootViewController" id="GEp-Sf-FjD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kGf-TV-Gwx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2065" y="-613"/>
+        </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
