@@ -87,7 +87,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="새 메모" id="l2t-uV-nEd">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="iy8-dQ-EwC"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="iy8-dQ-EwC">
+                            <connections>
+                                <action selector="close:" destination="Fd9-fe-i2a" id="TkZ-cw-Cut"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Mpx-gT-OQC"/>
                     </navigationItem>
                 </viewController>
@@ -103,12 +107,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KNa-ae-Gho">
-                                <rect key="frame" x="-446.66666666666669" y="83" width="1286.3333333333333" height="686"/>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FXm-Vb-Ne6">
+                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="KNa-ae-Gho" secondAttribute="height" multiplier="15:8" id="lUZ-xy-ChN"/>
-                                </constraints>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
@@ -118,15 +119,15 @@
                         <viewLayoutGuide key="safeArea" id="IRh-bu-hx3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="KNa-ae-Gho" firstAttribute="centerX" secondItem="v7Q-gM-0vk" secondAttribute="centerX" id="EIb-X4-dGp"/>
-                            <constraint firstItem="KNa-ae-Gho" firstAttribute="bottom" secondItem="IRh-bu-hx3" secondAttribute="bottom" id="S6v-nD-BWe"/>
-                            <constraint firstItem="KNa-ae-Gho" firstAttribute="centerY" secondItem="v7Q-gM-0vk" secondAttribute="centerY" id="cbi-1o-KYN"/>
+                            <constraint firstItem="FXm-Vb-Ne6" firstAttribute="trailing" secondItem="IRh-bu-hx3" secondAttribute="trailing" id="QCS-Nm-0b9"/>
+                            <constraint firstItem="FXm-Vb-Ne6" firstAttribute="top" secondItem="v7Q-gM-0vk" secondAttribute="top" constant="59" id="dMo-As-gzx"/>
+                            <constraint firstItem="FXm-Vb-Ne6" firstAttribute="bottom" secondItem="IRh-bu-hx3" secondAttribute="bottom" id="doX-LK-H3q"/>
+                            <constraint firstItem="FXm-Vb-Ne6" firstAttribute="leading" secondItem="IRh-bu-hx3" secondAttribute="leading" id="spa-2M-cOB"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="more" id="cnI-dL-NHr"/>
                     <connections>
-                        <outlet property="gg" destination="KNa-ae-Gho" id="MYg-NL-w2j"/>
-                        <outlet property="webView" destination="KNa-ae-Gho" id="0lB-HX-ZGh"/>
+                        <outlet property="webviewreal" destination="FXm-Vb-Ne6" id="trz-S2-YIV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V0c-zM-0BH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

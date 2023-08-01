@@ -100,6 +100,11 @@ MVVM 패턴으로 도전
 - 텍스트 뷰의 경우 전체 화면을 차지하게 하려면 최대한으로 늘리고 나서 constraint를 추가해야함
 ![제약조건 추가](memo_1.png)
 
+### 11. 취소 기능 구현
+
+- button과 연결 (action으로 연결하기)
+![outlet action 연결](cancel_1.png)
+
 ### (번외) 웹뷰 셋팅
 
 1. Webkit.framework 추가
@@ -109,6 +114,11 @@ MVVM 패턴으로 도전
 
 - 스토리보드와 컨트롤러를 같이 열고, webview를 컨트롤러로 드래그 하면 연결됨
 ![widget 연결](images/webview_2.png)
+
+3. WebView 기본 설정 추가
+
+- 기본 뒤로가기
+- 캐시 없음 (캐시 처리도 필요할듯?)
 
 ## 소스구조
 
