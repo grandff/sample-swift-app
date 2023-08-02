@@ -144,6 +144,12 @@ MVVM 패턴으로 도전
 
 - datasource 연결 후 해당 컨트롤러에 UITableViewDataSource를 상속받는 extension 추가하기
 
+### 16. 데이터 전달
+
+- 페이지 이동 시 데이터 전달해서 보여주기
+- segue를 통해서 데이터 전달하기
+- ios14 이후부터 deprecated 되는 메서드들을 처리해줌
+
 ## (번외) 웹뷰 셋팅
 
 ### 1. Webkit.framework 추가

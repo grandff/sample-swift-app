@@ -8,6 +8,18 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    
+    // 전달받은 데이터. 없을 수도 있으니 ? 붙이기.
+    var memo: MemoModel?
+    
+    // 날짜 포멧 설정
+    let formatter: DateFormatter = {
+       let f = DateFormatter()
+        f.dateStyle = .long
+        f.timeStyle = .short
+        f.locale = Locale(identifier: "Ko_kr")  // 한국 날짜
+        return f
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,9 +53,24 @@ extension DetailViewController: UITableViewDataSource{
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "memoCell", for: indexPath)
+            if #available(iOS 14.0, *) {
+                var content = cell.defaultContentConfiguration()
+                content.text = memo?.content
+                cell.contentConfiguration = content
+            } else {
+                cell.textLabel?.text = memo?.content
+            }
+            
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "dateCell", for: indexPath)
+            if #available(iOS 14.0, *) {
+                var content = cell.defaultContentConfiguration()                
+                content.secondaryText = formatter.string(for: memo?.insetDate)
+                cell.contentConfiguration = content
+            } else {
+                cell.detailTextLabel?.text = formatter.string(for: memo?.insetDate)
+            }
             return cell
         default:
             fatalError()
