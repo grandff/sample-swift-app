@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D90E27812A79ED4500420E88 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90E27802A79ED4500420E88 /* UIViewController+Alert.swift */; };
 		D90E27842A7A141800420E88 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90E27832A7A141800420E88 /* DetailViewController.swift */; };
+		D90E27872A7A41FC00420E88 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90E27862A7A41FC00420E88 /* DataManager.swift */; };
 		D927D3A72A78F7A7003AD49E /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D927D3A62A78F7A7003AD49E /* ComposeViewController.swift */; };
 		D9F10E6F2A77374100AA2725 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F10E6E2A77374100AA2725 /* AppDelegate.swift */; };
 		D9F10E712A77374100AA2725 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F10E702A77374100AA2725 /* SceneDelegate.swift */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		D90E27802A79ED4500420E88 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		D90E27832A7A141800420E88 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		D90E27862A7A41FC00420E88 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		D927D3A62A78F7A7003AD49E /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		D9F10E6B2A77374100AA2725 /* SampleSwiftApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleSwiftApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F10E6E2A77374100AA2725 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,14 @@
 			path = service;
 			sourceTree = "<group>";
 		};
+		D90E27852A7A41E200420E88 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				D90E27862A7A41FC00420E88 /* DataManager.swift */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
 		D9F10E622A77374100AA2725 = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +92,7 @@
 		D9F10E6D2A77374100AA2725 /* SampleSwiftApp */ = {
 			isa = PBXGroup;
 			children = (
+				D90E27852A7A41E200420E88 /* data */,
 				D9F10E8D2A77737700AA2725 /* webview */,
 				D9F10E8C2A77737100AA2725 /* memo */,
 				D9F10E6E2A77374100AA2725 /* AppDelegate.swift */,
@@ -227,6 +238,7 @@
 				D9F10E712A77374100AA2725 /* SceneDelegate.swift in Sources */,
 				D9F10E792A77374100AA2725 /* SampleSwiftApp.xcdatamodeld in Sources */,
 				D90E27842A7A141800420E88 /* DetailViewController.swift in Sources */,
+				D90E27872A7A41FC00420E88 /* DataManager.swift in Sources */,
 				D9F10E8A2A774E2900AA2725 /* MainController.swift in Sources */,
 				D9F10E9C2A779F4100AA2725 /* MemoListTableViewController.swift in Sources */,
 			);

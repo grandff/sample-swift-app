@@ -22,6 +22,10 @@ class MemoListTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         //tableView.reloadData()  // 시트 넘어가는 방식마다 다 다름 ios11부터는 시트형식으로 올라오는데 그떄는 이 방식을 사용 못함
         //print("view will apper?")
+        
+        // 데이터 불러오기
+        DataManager.shared.fetchMemo()
+        tableView.reloadData()
     }
     
     // notification 객체, 즉 토큰을 저장할 변수 생성
@@ -41,7 +45,8 @@ class MemoListTableViewController: UITableViewController {
             // 전환하려는 화면이 상세화면인 경우
             if let vc = segue.destination as? DetailViewController {
                 // detailviewcontroller에 생성해놓았던 memo에 접근 가능
-                vc.memo = MemoModel.dummyMemoList[indexPath.row]                
+                //vc.memo = MemoModel.dummyMemoList[indexPath.row]
+                vc.memo = DataManager.shared.memoList[indexPath.row]
             }
         }
     }
@@ -76,7 +81,9 @@ class MemoListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("fucking?")
         // 더미데이터 숫자만큼 설정함
-        return MemoModel.dummyMemoList.count
+        //return MemoModel.dummyMemoList.count
+        // core data로 수정
+        return DataManager.shared.memoList.count
     }
 
     // cell이 생성될때마다 호출됨
@@ -84,9 +91,11 @@ class MemoListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) // 아까 설정한 identifier로 설정
         
         // 더미데이터 출력
-        let target = MemoModel.dummyMemoList[indexPath.row]
+        //let target = MemoModel.dummyMemoList[indexPath.row]
+        // core data
+        let target = DataManager.shared.memoList[indexPath.row]
         cell.textLabel?.text = target.content
-        cell.detailTextLabel?.text = formatter.string(from: target.insetDate)   // 날짜 포멧팅 설정
+        cell.detailTextLabel?.text = formatter.string(from: target.insertDate!)   // 날짜 포멧팅 설정
 
         return cell
     }

@@ -161,6 +161,16 @@ MVVM 패턴으로 도전
   - Lines : 보여질 라인 설정. 0이면 전체 보냄.
   - Line Break : 잘릴 텍스트를 어떻게 처리할지
 
+### 18. DB 구현 1
+
+- 메모 저장 기능 구현
+- 데이터를 저장할떄는 Core Data를 사용함
+- Core Data 저장을 위해 모델 생성
+![core model 생성](db_1.png)
+
+- Cord Data의 모델은 class로 하게 될 경우 다른 class와 이름이 겹치면 안됨
+- 싱글톤 패턴을 사용해서 수정
+
 ## (번외) 웹뷰 셋팅
 
 ### 1. Webkit.framework 추가

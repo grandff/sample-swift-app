@@ -24,9 +24,9 @@ class ComposeViewController: UIViewController {
             alert(message: "메모를 입력하세요!")
             return
         }
-        // 메모 추가
-        let newMemo = MemoModel(content: memo)
-        MemoModel.dummyMemoList.append(newMemo)
+        // 메모 추가 (더미데이터)
+        //let newMemo = MemoModel(content: memo)
+        //MemoModel.dummyMemoList.append(newMemo)
         
         // notification 전달
         NotificationCenter.default.post(name: ComposeViewController.newMemoDidInsert, object: nil)
