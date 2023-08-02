@@ -16,6 +16,23 @@ class ComposeViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    // 저장 액션
+    @IBAction func save(_ sender: Any) {
+        guard let memo = memoTextView.text,
+              memo.count > 0 else {
+            // 메모가 비어있으면 경고창으로 안내
+            alert(message: "메모를 입력하세요!")
+            return
+        }
+        // 메모 추가
+        let newMemo = MemoModel(content: memo)
+        MemoModel.dummyMemoList.append(newMemo)
+        
+        // 메모 등록 화면 닫기
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBOutlet weak var memoTextView: UITextView!
     
     override func viewDidLoad() {
         

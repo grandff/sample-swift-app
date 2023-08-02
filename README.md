@@ -105,6 +105,13 @@ MVVM 패턴으로 도전
 - button과 연결 (action으로 연결하기)
 ![outlet action 연결](cancel_1.png)
 
+### 12. 메모 저장 기능 구현
+
+- save 버튼과 이벤트 연결(action으로 연결, 취소와 동일함)
+- 추가로 텍스트뷰도 연결(outletd으로)
+- 메시지 안내를 위한 alert controller 생성
+- uiviewcontroller를 상속받는 모든 컨트롤러에서 사용이 가능하도록 extension으로 만듬
+
 ### (번외) 웹뷰 셋팅
 
 1. Webkit.framework 추가
