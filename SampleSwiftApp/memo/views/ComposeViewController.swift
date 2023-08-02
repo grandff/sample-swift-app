@@ -28,6 +28,9 @@ class ComposeViewController: UIViewController {
         let newMemo = MemoModel(content: memo)
         MemoModel.dummyMemoList.append(newMemo)
         
+        // notification 전달
+        NotificationCenter.default.post(name: ComposeViewController.newMemoDidInsert, object: nil)
+        
         // 메모 등록 화면 닫기
         dismiss(animated: true, completion: nil)
     }
@@ -52,4 +55,9 @@ class ComposeViewController: UIViewController {
     }
     */
 
+}
+
+// 등록 후 데이터 변경 처리를 위한 notification 추가
+extension ComposeViewController {
+    static let newMemoDidInsert = Notification.Name(rawValue: "newMemoDidInsert")
 }

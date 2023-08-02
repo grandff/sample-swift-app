@@ -16,9 +16,34 @@ class MemoListTableViewController: UITableViewController {
         f.locale = Locale(identifier: "Ko_kr")  // 한국 날짜
         return f
     }()
+    
+    // 메모 목록 업데이트
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //tableView.reloadData()  // 시트 넘어가는 방식마다 다 다름 ios11부터는 시트형식으로 올라오는데 그떄는 이 방식을 사용 못함
+        //print("view will apper?")
+    }
+    
+    // notification 객체, 즉 토큰을 저장할 변수 생성
+    var token : NSObjectProtocol?
+    
+    // notificatoin 제거 (사용하고나서 꼭 제거해야함)
+    deinit {
+        if let token = token {
+            NotificationCenter.default.removeObserver(token)
+        }
+    }
 
+    // 한번만 실행되는 초기화코드 구현
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // notiication 수신 처리 추가
+        // 순서대로 수신받을 noti 이름 / 보통 object는 nil을 쓴다고 함 / 처리할 쓰레드 / 쓰레드에 보낼 closure action
+        // 데이터 갱신 요청
+        token = NotificationCenter.default.addObserver(forName: ComposeViewController.newMemoDidInsert, object: nil, queue: OperationQueue.main){
+            [weak self] (noti) in self?.tableView.reloadData()
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -37,6 +62,7 @@ class MemoListTableViewController: UITableViewController {
 
     // cell 카운트 설정
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("fucking?")
         // 더미데이터 숫자만큼 설정함
         return MemoModel.dummyMemoList.count
     }

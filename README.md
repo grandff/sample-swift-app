@@ -112,6 +112,14 @@ MVVM 패턴으로 도전
 - 메시지 안내를 위한 alert controller 생성
 - uiviewcontroller를 상속받는 모든 컨트롤러에서 사용이 가능하도록 extension으로 만듬
 
+### 13. 목록 업데이트
+
+- 메모를 등록하면 목록이 업데이트 되도록 처리
+- ios 버전마다 화면 전환 방식이 다르기 때문에 거기에 맞게 다 처리해야함
+- Notification 으로 처리를 해야함
+- Notification은 Ios에서 굉장히 중요한 개념이므로 꼭 숙지
+- Notification은 사용하고 나서 꼭 해지를 해야함
+
 ### (번외) 웹뷰 셋팅
 
 1. Webkit.framework 추가
@@ -128,6 +136,9 @@ MVVM 패턴으로 도전
 - 캐시 없음 (캐시 처리도 필요할듯?)
 
 ## 소스구조
+
+- webview : webview 관련 기본 설정들
+- memo : kxcoding memo 강의에서 사용한 소스들
 
 ## TODO LIST
 
