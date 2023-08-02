@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D90E27812A79ED4500420E88 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90E27802A79ED4500420E88 /* UIViewController+Alert.swift */; };
+		D90E27842A7A141800420E88 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90E27832A7A141800420E88 /* DetailViewController.swift */; };
 		D927D3A72A78F7A7003AD49E /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D927D3A62A78F7A7003AD49E /* ComposeViewController.swift */; };
 		D9F10E6F2A77374100AA2725 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F10E6E2A77374100AA2725 /* AppDelegate.swift */; };
 		D9F10E712A77374100AA2725 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F10E702A77374100AA2725 /* SceneDelegate.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		D90E27802A79ED4500420E88 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		D90E27832A7A141800420E88 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D927D3A62A78F7A7003AD49E /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		D9F10E6B2A77374100AA2725 /* SampleSwiftApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleSwiftApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F10E6E2A77374100AA2725 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 		D9F10E9A2A779F1F00AA2725 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				D90E27832A7A141800420E88 /* DetailViewController.swift */,
 				D9F10E9B2A779F4100AA2725 /* MemoListTableViewController.swift */,
 				D927D3A62A78F7A7003AD49E /* ComposeViewController.swift */,
 			);
@@ -223,6 +226,7 @@
 				D927D3A72A78F7A7003AD49E /* ComposeViewController.swift in Sources */,
 				D9F10E712A77374100AA2725 /* SceneDelegate.swift in Sources */,
 				D9F10E792A77374100AA2725 /* SampleSwiftApp.xcdatamodeld in Sources */,
+				D90E27842A7A141800420E88 /* DetailViewController.swift in Sources */,
 				D9F10E8A2A774E2900AA2725 /* MainController.swift in Sources */,
 				D9F10E9C2A779F4100AA2725 /* MemoListTableViewController.swift in Sources */,
 			);

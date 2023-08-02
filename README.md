@@ -98,12 +98,12 @@ MVVM 패턴으로 도전
 - 만약 풀스크린으로 가게 하면 닫기 버튼 또는 뒤로가기 버튼을 별도로 구현해야함
 - 화면에 버튼 및 텍스트뷰 추가
 - 텍스트 뷰의 경우 전체 화면을 차지하게 하려면 최대한으로 늘리고 나서 constraint를 추가해야함
-![제약조건 추가](memo_1.png)
+![제약조건 추가](images/memo_1.png)
 
 ### 11. 취소 기능 구현
 
 - button과 연결 (action으로 연결하기)
-![outlet action 연결](cancel_1.png)
+![outlet action 연결](images/cancel_1.png)
 
 ### 12. 메모 저장 기능 구현
 
@@ -120,15 +120,30 @@ MVVM 패턴으로 도전
 - Notification은 Ios에서 굉장히 중요한 개념이므로 꼭 숙지
 - Notification은 사용하고 나서 꼭 해지를 해야함
 
+### 14. 메모 보기화면 1
+
+- 메모 상세 화면 구성
+- Table view 에서 새로운 View 화면과 연결
+- table view에 accessory 탭애서 화살표 추가 가능
+- detail view 에 toolbar 추가
+  - toolbar가 하단의 인디케이터에 맞게 설정되서 배경색이 다 잡혀야 맞게 간거임
+  ![tool bar add](images/detail_1.png)
+- table view를 익히기 위해서 상세보기 화면에 table view를 추가해줌(컨트롤러가 아닌 위젯으로)
+  - table view는 디바이스 최상까지 올리기 (네비게이터랑 겹쳐도 알아서 여백이 생김)
+- constraint 지정을 양쪽에 해줌
+  - table view와 toolbar 모두 해야함 (table view는 4방향 전부, toolbar는 상단 제외하고 나머지 3곳)
+  ![table view constraint](images/detail_2.png)
+  ![toolbar constraint](images/detail_3.png)
+
 ### (번외) 웹뷰 셋팅
 
 1. Webkit.framework 추가
-![webview 설정](images/webview_1.png)
+  ![webview 설정](images/webview_1.png)
 
 2. WebView 연결
 
 - 스토리보드와 컨트롤러를 같이 열고, webview를 컨트롤러로 드래그 하면 연결됨
-![widget 연결](images/webview_2.png)
+  ![widget 연결](images/webview_2.png)
 
 3. WebView 기본 설정 추가
 
