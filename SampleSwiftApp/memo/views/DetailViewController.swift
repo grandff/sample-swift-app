@@ -27,3 +27,28 @@ class DetailViewController: UIViewController {
     */
 
 }
+
+// uitableviewdatasource extension 연결
+extension DetailViewController: UITableViewDataSource{
+    // 테이블 뷰가 표시할 셀 숫자
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    // 데이터 표시할 위치 지정
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // 몇번째 셀인지 설정
+        switch indexPath.row {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "memoCell", for: indexPath)
+            return cell
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "dateCell", for: indexPath)
+            return cell
+        default:
+            fatalError()
+        }
+    }
+    
+    
+}

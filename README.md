@@ -122,7 +122,7 @@ MVVM 패턴으로 도전
 
 ### 14. 메모 보기화면 1
 
-- 메모 상세 화면 구성
+- 메모 상세 화면 구성(위젯 추가 및 제약조건 설정)
 - Table view 에서 새로운 View 화면과 연결
 - table view에 accessory 탭애서 화살표 추가 가능
 - detail view 에 toolbar 추가
@@ -135,19 +135,29 @@ MVVM 패턴으로 도전
   ![table view constraint](images/detail_2.png)
   ![toolbar constraint](images/detail_3.png)
 
-### (번외) 웹뷰 셋팅
+### 15. 메모 보기화면 2
 
-1. Webkit.framework 추가
-  ![webview 설정](images/webview_1.png)
+- 테이블 뷰에 사용할 셀 추가
+- 추가한 테이블뷰에 datasource 추가하기(테이블뷰를 뷰화면의 헤더로 연결하거나 아니면 마우스 오른쪽버튼 도 가능)
+![tableview connect 1](images/detail_4.png)
+![tableview connect 2](images/detail_5.png)
 
-2. WebView 연결
+- datasource 연결 후 해당 컨트롤러에 UITableViewDataSource를 상속받는 extension 추가하기
+
+## (번외) 웹뷰 셋팅
+
+### 1. Webkit.framework 추가
+
+![webview 설정](images/webview_1.png)
+
+### 2. WebView 연결
 
 - 스토리보드와 컨트롤러를 같이 열고, webview를 컨트롤러로 드래그 하면 연결됨
-  ![widget 연결](images/webview_2.png)
+![widget 연결](images/webview_2.png)
 
-3. WebView 기본 설정 추가
+### 3. WebView 기본 설정 추가
 
-- 기본 뒤로가기
+- 뒤로가기 제스쳐 설정
 - 캐시 없음 (캐시 처리도 필요할듯?)
 
 ## 소스구조
@@ -157,11 +167,11 @@ MVVM 패턴으로 도전
 
 ## TODO LIST
 
-[ ] 기본 환경설정
+[X] 기본 환경설정
 
-[ ] 바텀탭네비게이션 설정
+[X] 바텀탭네비게이션 설정
 
-[ ] 웹뷰 화면 설정
+[X] 웹뷰 화면 설정
 
 [ ] 기본 CRUD 처리
 
