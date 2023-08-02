@@ -65,8 +65,13 @@ extension DetailViewController: UITableViewDataSource{
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "dateCell", for: indexPath)
             if #available(iOS 14.0, *) {
-                var content = cell.defaultContentConfiguration()                
+                var content = cell.defaultContentConfiguration()
                 content.secondaryText = formatter.string(for: memo?.insetDate)
+                content.secondaryTextProperties.color = .gray                
+                content.secondaryTextProperties.alignment = .center
+                // 폰트사이즈 설정
+                let fontDescriptor = content.secondaryTextProperties.font.fontDescriptor.withSize(10)
+                content.secondaryTextProperties.font = UIFont(descriptor: fontDescriptor, size: 0)
                 cell.contentConfiguration = content
             } else {
                 cell.detailTextLabel?.text = formatter.string(for: memo?.insetDate)
