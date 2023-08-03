@@ -9,6 +9,8 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    @IBOutlet weak var memoTableView: UITableView!
+    
     // 전달받은 데이터. 없을 수도 있으니 ? 붙이기.
     var memo:Memo?
     
@@ -20,11 +22,29 @@ class DetailViewController: UIViewController {
         f.locale = Locale(identifier: "Ko_kr")  // 한국 날짜
         return f
     }()
-
+    
+    // 편집화면으로 이동
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination.children.first as? ComposeViewController {
+            // 편집할 메모 전달
+            vc.editTaget = memo
+            
+        }
+    }
+    
+    var token: NSObjectProtocol?
+    
+    deinit{
+        if let token = token {
+            NotificationCenter.default.removeObserver(token)
+        }
+    }
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // 옵저버 추가
+        token = NotificationCenter.default.addObserver(forName: ComposeViewController.memoDidChange, object: nil, queue: OperationQueue.main, using: {[weak self] (noti) in self?.memoTableView.reloadData()})
     }
     
 
