@@ -32,6 +32,26 @@ class DetailViewController: UIViewController {
         }
     }
     
+    // 메모 삭제
+    @IBAction func deleteMemo(_ sender: Any) {
+        let alert = UIAlertController(title: "삭제 확인", message: "메모를 삭제할까요?", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "삭제", style: .destructive){
+            [weak self] (action) in
+            DataManager.shared.deleteMemo(self?.memo)
+            // 이전화면으로 돌아가기
+            // 네비게이션을 통해 이전 화면으로 접근한 다음 popview를 호출함
+            self?.navigationController?.popViewController(animated: true)
+        }
+        
+        alert.addAction(okAction)
+        
+        // 취소는 직접 기능 구현을 안해도 됨
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
     var token: NSObjectProtocol?
     
     deinit{
