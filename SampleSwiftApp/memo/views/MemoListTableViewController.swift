@@ -59,7 +59,9 @@ class MemoListTableViewController: UITableViewController {
         // 순서대로 수신받을 noti 이름 / 보통 object는 nil을 쓴다고 함 / 처리할 쓰레드 / 쓰레드에 보낼 closure action
         // 데이터 갱신 요청
         token = NotificationCenter.default.addObserver(forName: ComposeViewController.newMemoDidInsert, object: nil, queue: OperationQueue.main){
-            [weak self] (noti) in self?.tableView.reloadData()
+            [weak self] (noti) in
+            
+            self?.tableView.reloadData()
         }
 
         // Uncomment the following line to preserve selection between presentations

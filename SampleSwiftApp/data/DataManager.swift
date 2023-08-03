@@ -36,7 +36,21 @@ class DataManager {
         }catch {
             print(error)
         }
+    }
+    
+    // 데이터 등록
+    func addNewMemo(_ memo: String?) {
+        // 메모 모델 생성 (비어있음)
+        let newMemo = Memo(context: mainContext)
+        newMemo.content = memo
+        newMemo.insertDate = Date()
         
+        // 메모리스트 배열에도 저장
+        // 최근 메모가 앞에 와야하므로 insert 사용
+        memoList.insert(newMemo, at: 0)
+        
+        // 메모 저장
+        saveContext()
     }
     
     
