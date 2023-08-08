@@ -34,7 +34,7 @@ class WebViewController: UIViewController {
         // 좌우 스와이프 동작 시 뒤로가기, 앞으로가기 기능 활성화
         webviewreal.allowsBackForwardNavigationGestures = true
         
-        if let url = URL(string: "https://m.naver.com"){
+        if let url = URL(string: "https://sample-mobile-webapp.vercel.app"){
             let request = URLRequest(url : url)
             webviewreal.load(request)
         }
