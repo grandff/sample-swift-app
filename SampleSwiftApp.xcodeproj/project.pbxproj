@@ -11,6 +11,11 @@
 		D90E27842A7A141800420E88 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90E27832A7A141800420E88 /* DetailViewController.swift */; };
 		D90E27872A7A41FC00420E88 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90E27862A7A41FC00420E88 /* DataManager.swift */; };
 		D927D3A72A78F7A7003AD49E /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D927D3A62A78F7A7003AD49E /* ComposeViewController.swift */; };
+		D98D3DFE2A835E05000A57A6 /* SharedConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D98D3DFD2A835E05000A57A6 /* SharedConfig.xcconfig */; };
+		D98D3E002A835E8C000A57A6 /* DebugConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D98D3DFF2A835E8B000A57A6 /* DebugConfig.xcconfig */; };
+		D98D3E022A835E97000A57A6 /* RelaeseConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D98D3E012A835E97000A57A6 /* RelaeseConfig.xcconfig */; };
+		D98D3E0B2A8364CA000A57A6 /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = D98D3E0A2A8364CA000A57A6 /* loading.gif */; };
+		D98D3E0D2A836701000A57A6 /* InternetConnectCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98D3E0C2A836701000A57A6 /* InternetConnectCheck.swift */; };
 		D9F10E6F2A77374100AA2725 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F10E6E2A77374100AA2725 /* AppDelegate.swift */; };
 		D9F10E712A77374100AA2725 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F10E702A77374100AA2725 /* SceneDelegate.swift */; };
 		D9F10E762A77374100AA2725 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9F10E742A77374100AA2725 /* Main.storyboard */; };
@@ -29,6 +34,11 @@
 		D90E27832A7A141800420E88 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D90E27862A7A41FC00420E88 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		D927D3A62A78F7A7003AD49E /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
+		D98D3DFD2A835E05000A57A6 /* SharedConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = SharedConfig.xcconfig; sourceTree = "<group>"; };
+		D98D3DFF2A835E8B000A57A6 /* DebugConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DebugConfig.xcconfig; sourceTree = "<group>"; };
+		D98D3E012A835E97000A57A6 /* RelaeseConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = RelaeseConfig.xcconfig; sourceTree = "<group>"; };
+		D98D3E0A2A8364CA000A57A6 /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
+		D98D3E0C2A836701000A57A6 /* InternetConnectCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetConnectCheck.swift; sourceTree = "<group>"; };
 		D9F10E6B2A77374100AA2725 /* SampleSwiftApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleSwiftApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F10E6E2A77374100AA2725 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9F10E702A77374100AA2725 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +82,25 @@
 			path = data;
 			sourceTree = "<group>";
 		};
+		D98D3DFC2A835DDF000A57A6 /* config */ = {
+			isa = PBXGroup;
+			children = (
+				D98D3DFD2A835E05000A57A6 /* SharedConfig.xcconfig */,
+				D98D3DFF2A835E8B000A57A6 /* DebugConfig.xcconfig */,
+				D98D3E012A835E97000A57A6 /* RelaeseConfig.xcconfig */,
+			);
+			path = config;
+			sourceTree = "<group>";
+		};
+		D98D3E072A8363CE000A57A6 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				D98D3E0A2A8364CA000A57A6 /* loading.gif */,
+				D98D3E0C2A836701000A57A6 /* InternetConnectCheck.swift */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
 		D9F10E622A77374100AA2725 = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +121,7 @@
 		D9F10E6D2A77374100AA2725 /* SampleSwiftApp */ = {
 			isa = PBXGroup;
 			children = (
+				D98D3DFC2A835DDF000A57A6 /* config */,
 				D90E27852A7A41E200420E88 /* data */,
 				D9F10E8D2A77737700AA2725 /* webview */,
 				D9F10E8C2A77737100AA2725 /* memo */,
@@ -128,6 +158,7 @@
 		D9F10E8D2A77737700AA2725 /* webview */ = {
 			isa = PBXGroup;
 			children = (
+				D98D3E072A8363CE000A57A6 /* components */,
 				D9F10E902A7774CC00AA2725 /* views */,
 			);
 			path = webview;
@@ -218,8 +249,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9F10E7E2A77374300AA2725 /* LaunchScreen.storyboard in Resources */,
+				D98D3DFE2A835E05000A57A6 /* SharedConfig.xcconfig in Resources */,
 				D9F10E7B2A77374300AA2725 /* Assets.xcassets in Resources */,
 				D9F10E762A77374100AA2725 /* Main.storyboard in Resources */,
+				D98D3E0B2A8364CA000A57A6 /* loading.gif in Resources */,
+				D98D3E022A835E97000A57A6 /* RelaeseConfig.xcconfig in Resources */,
+				D98D3E002A835E8C000A57A6 /* DebugConfig.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +271,7 @@
 				D9F10E6F2A77374100AA2725 /* AppDelegate.swift in Sources */,
 				D927D3A72A78F7A7003AD49E /* ComposeViewController.swift in Sources */,
 				D9F10E712A77374100AA2725 /* SceneDelegate.swift in Sources */,
+				D98D3E0D2A836701000A57A6 /* InternetConnectCheck.swift in Sources */,
 				D9F10E792A77374100AA2725 /* SampleSwiftApp.xcdatamodeld in Sources */,
 				D90E27842A7A141800420E88 /* DetailViewController.swift in Sources */,
 				D90E27872A7A41FC00420E88 /* DataManager.swift in Sources */,
@@ -382,6 +418,7 @@
 		};
 		D9F10E832A77374300AA2725 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D98D3DFF2A835E8B000A57A6 /* DebugConfig.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -404,6 +441,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.grandff.SampleSwiftApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SERVER_URL = "https://sample-mobile-webapp.vercel.app";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -415,6 +453,7 @@
 		};
 		D9F10E842A77374300AA2725 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D98D3E012A835E97000A57A6 /* RelaeseConfig.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -437,6 +476,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.grandff.SampleSwiftApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SERVER_URL = "https://sample-mobile-webapp.vercel.app";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -456,7 +496,7 @@
 				D9F10E812A77374300AA2725 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		D9F10E822A77374300AA2725 /* Build configuration list for PBXNativeTarget "SampleSwiftApp" */ = {
 			isa = XCConfigurationList;
@@ -465,7 +505,7 @@
 				D9F10E842A77374300AA2725 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 

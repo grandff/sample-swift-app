@@ -72,7 +72,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CnZ-Mw-ejm">
-                                <rect key="frame" x="0.0" y="774" width="393" height="44"/>
+                                <rect key="frame" x="0.0" y="769" width="393" height="49"/>
                                 <items>
                                     <barButtonItem systemItem="trash" id="MpO-tM-2gU">
                                         <color key="tintColor" systemColor="systemRedColor"/>
@@ -95,7 +95,7 @@
                                 </items>
                             </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="SK4-Ak-qwN">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="774"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="memoCell" textLabel="Nwb-UH-4eN" style="IBUITableViewCellStyleDefault" id="Ww2-yB-tUR">
@@ -221,24 +221,37 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading.gif" translatesAutoresizingMaskIntoConstraints="NO" id="mQE-aV-VS9">
+                                <rect key="frame" x="116" y="626" width="161" height="130"/>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="0bw-AB-GQ9">
+                                <rect key="frame" x="186" y="416" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IRh-bu-hx3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="IRh-bu-hx3" firstAttribute="bottom" secondItem="mQE-aV-VS9" secondAttribute="bottom" constant="62" id="4nj-f5-tpa"/>
+                            <constraint firstItem="IRh-bu-hx3" firstAttribute="trailing" secondItem="mQE-aV-VS9" secondAttribute="trailing" constant="116" id="POi-lg-cjG"/>
                             <constraint firstItem="FXm-Vb-Ne6" firstAttribute="trailing" secondItem="IRh-bu-hx3" secondAttribute="trailing" id="QCS-Nm-0b9"/>
+                            <constraint firstItem="mQE-aV-VS9" firstAttribute="top" secondItem="IRh-bu-hx3" secondAttribute="top" constant="567" id="anr-5s-Egc"/>
                             <constraint firstItem="FXm-Vb-Ne6" firstAttribute="top" secondItem="v7Q-gM-0vk" secondAttribute="top" constant="59" id="dMo-As-gzx"/>
                             <constraint firstItem="FXm-Vb-Ne6" firstAttribute="bottom" secondItem="IRh-bu-hx3" secondAttribute="bottom" id="doX-LK-H3q"/>
                             <constraint firstItem="FXm-Vb-Ne6" firstAttribute="leading" secondItem="IRh-bu-hx3" secondAttribute="leading" id="spa-2M-cOB"/>
+                            <constraint firstItem="mQE-aV-VS9" firstAttribute="leading" secondItem="IRh-bu-hx3" secondAttribute="leading" constant="116" id="ypI-hH-a6J"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="more" id="cnI-dL-NHr"/>
                     <connections>
+                        <outlet property="indicatorView" destination="0bw-AB-GQ9" id="Qk1-yx-ruz"/>
+                        <outlet property="loadingImage" destination="mQE-aV-VS9" id="hyj-kh-RJ5"/>
                         <outlet property="webviewreal" destination="FXm-Vb-Ne6" id="trz-S2-YIV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V0c-zM-0BH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-839" y="314"/>
+            <point key="canvasLocation" x="-840.45801526717548" y="313.38028169014086"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Uba-t7-mvK">
@@ -281,6 +294,7 @@
         <segue reference="hKg-fa-KWn"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="loading.gif" width="150" height="150"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
