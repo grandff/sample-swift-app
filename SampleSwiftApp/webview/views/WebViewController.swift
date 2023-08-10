@@ -14,8 +14,11 @@ class WebViewController: UIViewController {
     @IBOutlet weak var webviewreal: WKWebView!
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     
-    // web url
+    // webView main url
     let serverUrl = Bundle.main.object(forInfoDictionaryKey: "ServerUrl") as! String
+    
+    // window.open webview
+    var popupView : WKWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +56,7 @@ class WebViewController: UIViewController {
         
         // 웹에서 설정해놓은 콜백이름으로 추가
         contentController.add(self, name: Constants.WebSchema.callBackHandlerKey)
+        contentController.add(self, name: Constants.WebSchema.goToNatviePage)
                 
         // webview 설정
         webViewInit()
@@ -171,10 +175,10 @@ extension WebViewController : WKNavigationDelegate {
 
 // 스크롤 제어
 extension WebViewController : UIScrollViewDelegate {
+    // 웹뷰에서 줌 확대 동작 방지
     func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
         scrollView.pinchGestureRecognizer?.isEnabled = false
     }
-        
     
     // zooming 막기 ? 시발 이거 아니잖아
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
@@ -209,8 +213,73 @@ extension WebViewController : WKScriptMessageHandler {
             }else{  // 아닌 경우
                 webviewreal.evaluateJavaScript("callNativeCallBack('\(String(describing:message.body))');")
             }
+        }
+        
+        // web -> natvie page move 를 위한 자바스크립트 리스너
+        if message.name == Constants.WebSchema.goToNatviePage, let targetPage = message.body as? String {
+            print("targetpage : \(targetPage)")
+            if targetPage == "memoPage" {
+                moveToMemoPage()
+            }
+        }
+    }
+    
+    // natvie page로 이동(kxcoding의 메모화면으로 이동시킴)
+    func moveToMemoPage() {
+        let targetViewController = self.storyboard?.instantiateViewController(identifier: "MemoList")
+        targetViewController?.modalTransitionStyle = .coverVertical // ??
+        targetViewController?.modalPresentationStyle = .fullScreen   // 풀스크린으로 설정
+        self.present(targetViewController!, animated: true, completion: nil)
+        //navigationController?.present(targetViewController!, animated: true)
+        //navigationController?.pushViewController(targetViewController, animated: true)
+    }
+}
+
+// window.open 대응
+extension WebViewController {
+    // popupview 기본 설정
+    func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
+        
+        // add safe area
+        let scenes = UIApplication.shared.connectedScenes
+        let windowScene = scenes.first as? UIWindowScene
+        let window = windowScene?.windows.first
+        let safeAreaInsets = window?.safeAreaInsets ?? UIEdgeInsets.zero
+        let popupFrame = CGRect(x: safeAreaInsets.left, y: safeAreaInsets.top, width: self.view.window!.windowScene!.screen.bounds.width - safeAreaInsets.left - safeAreaInsets.right, height: self.view.window!.windowScene!.screen.bounds.height - safeAreaInsets.top - safeAreaInsets.bottom)
+                        
+        popupView = WKWebView(frame: popupFrame, configuration: configuration)
+        //popupView?.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        popupView?.uiDelegate = self
+        popupView?.navigationDelegate = self
+        
+        // webview 닫기를 추가했는데 동작은 안함.. 안보임 일단
+        let closeButton = UIButton()
+        closeButton.setTitle("Close", for: .normal)
+        closeButton.addTarget(self, action: #selector(closePopupView), for: .touchUpInside)
+        popupView?.addSubview(closeButton)
+        
+        closeButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            closeButton.topAnchor.constraint(equalTo: popupView!.topAnchor, constant: 8),
+            closeButton.leadingAnchor.constraint(equalTo: popupView!.leadingAnchor, constant: 8),
+            closeButton.widthAnchor.constraint(equalToConstant: 44),
+            closeButton.heightAnchor.constraint(equalToConstant: 44)
+        ])
             
-            
+        view.addSubview(popupView!)
+        
+        return popupView
+    }
+    
+    @objc func closePopupView() {
+        popupView?.removeFromSuperview()
+        popupView = nil
+    }
+    
+    // popupview 닫기
+    func webViewDidClose(_ webView: WKWebView) {
+        if webView == popupView {
+            closePopupView()
         }
     }
 }

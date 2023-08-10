@@ -12,9 +12,9 @@
         <!--This is Memo-->
         <scene sceneID="d5V-Iu-JnW">
             <objects>
-                <tableViewController id="wJR-Yv-GMp" customClass="MemoListTableViewController" customModule="SampleSwiftApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController restorationIdentifier="MemoList2" storyboardIdentifier="MemoList2" id="wJR-Yv-GMp" customClass="MemoListTableViewController" customModule="SampleSwiftApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="KPN-ap-QFS">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -52,6 +52,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="This is Memo" id="ak9-Xk-Npf">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="5Wp-Kt-LQB">
+                            <connections>
+                                <action selector="close:" destination="wJR-Yv-GMp" id="n0L-Dr-rCq"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="SGo-EO-9t9">
                             <connections>
                                 <segue destination="CDh-N5-LBS" kind="presentation" id="H7a-12-W5E"/>
@@ -68,11 +73,11 @@
             <objects>
                 <viewController id="eKF-y3-bmb" customClass="DetailViewController" customModule="SampleSwiftApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sGk-X2-cXR">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CnZ-Mw-ejm">
-                                <rect key="frame" x="0.0" y="769" width="393" height="49"/>
+                                <rect key="frame" x="0.0" y="798" width="393" height="44"/>
                                 <items>
                                     <barButtonItem systemItem="trash" id="MpO-tM-2gU">
                                         <color key="tintColor" systemColor="systemRedColor"/>
@@ -95,7 +100,7 @@
                                 </items>
                             </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="SK4-Ak-qwN">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="798"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="memoCell" textLabel="Nwb-UH-4eN" style="IBUITableViewCellStyleDefault" id="Ww2-yB-tUR">
@@ -247,19 +252,21 @@
                         <outlet property="indicatorView" destination="0bw-AB-GQ9" id="Qk1-yx-ruz"/>
                         <outlet property="loadingImage" destination="mQE-aV-VS9" id="hyj-kh-RJ5"/>
                         <outlet property="webviewreal" destination="FXm-Vb-Ne6" id="trz-S2-YIV"/>
+                        <segue destination="DzO-N4-om9" kind="presentation" identifier="memoSegue" id="rbx-3K-7wo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V0c-zM-0BH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-840.45801526717548" y="313.38028169014086"/>
+            <point key="canvasLocation" x="-698" y="235"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Uba-t7-mvK">
             <objects>
-                <navigationController id="DzO-N4-om9" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MemoList" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DzO-N4-om9" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="history" id="1Xq-ob-DeZ"/>
+                    <navigationItem key="navigationItem" id="ata-pG-Y7n"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="w7U-KD-xX9">
-                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="108"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -291,7 +298,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="hKg-fa-KWn"/>
+        <segue reference="H7a-12-W5E"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="loading.gif" width="150" height="150"/>

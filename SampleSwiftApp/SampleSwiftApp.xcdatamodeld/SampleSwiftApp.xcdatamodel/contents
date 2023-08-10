@@ -4,4 +4,7 @@
         <attribute name="content" optional="YES" attributeType="String"/>
         <attribute name="insertDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
+    <entity name="Sample" representedClassName="Sample" syncable="YES" codeGenerationType="class">
+        <attribute name="token" optional="YES" attributeType="String"/>
+    </entity>
 </model>

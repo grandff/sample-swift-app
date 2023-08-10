@@ -237,9 +237,11 @@ MVVM 패턴으로 도전
 
 ## Refrences
 
-![webview의 모든것](https://jingyu.tistory.com/2)
+[webview의 모든것](https://jingyu.tistory.com/2)
+[화면전환](https://velog.io/@wook4506/iOS-Swift-%ED%99%94%EB%A9%B4%EC%9D%84-%EC%A0%84%ED%99%98%ED%95%98%EB%8A%94-%EB%8B%A4%EC%96%91%ED%95%9C-%EB%B0%A9%EB%B2%95%EB%93%A4)
 
 ## command
 
 - cocoapods 설치
   - sudo gem install cocoapods
+  - pod init

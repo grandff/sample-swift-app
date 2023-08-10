@@ -11,5 +11,6 @@ struct Constants{
     struct WebSchema{
         static let schema = "sampleWebAppKdn"
         static let callBackHandlerKey = "callbackHandler"
+        static let goToNatviePage = "navigateToPage"
     }
 }

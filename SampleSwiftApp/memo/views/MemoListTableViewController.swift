@@ -50,7 +50,10 @@ class MemoListTableViewController: UITableViewController {
             }
         }
     }
-
+    @IBAction func close(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     // 한번만 실행되는 초기화코드 구현
     override func viewDidLoad() {
         super.viewDidLoad()
