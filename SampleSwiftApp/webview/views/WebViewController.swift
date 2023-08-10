@@ -25,9 +25,35 @@ class WebViewController: UIViewController {
         webviewreal.navigationDelegate = self
         webviewreal.scrollView.delegate = self
                 
+        // loading bar
         loadingImage.isHidden = true
         indicatorView.isHidden = true
         
+        // webview configuration add
+        // INFO storyboard에 추가를 해놨기 때문에 이렇게 하는거고, 만약 스토리보드 안쓰고 하는거면 설정 방식이 다름!!
+        let contentController = webviewreal.configuration.userContentController // javascript bridge
+        
+        // url schema setting
+        // INFO iOS14 부터 달라진 설정 방식때문에 나눠놨음. 자바스크립트 설정 허용 추가.
+        let webViewConfiguration = webviewreal.configuration
+        let webPreferences = webviewreal.configuration.preferences
+        let webpagePreferences = WKWebpagePreferences()
+        if #available(iOS 14.0, *) {
+            webpagePreferences.allowsContentJavaScript = true
+            webViewConfiguration.defaultWebpagePreferences = webpagePreferences
+        } else {
+            webPreferences.javaScriptEnabled = true
+        }
+        webPreferences.javaScriptCanOpenWindowsAutomatically = true
+                        
+        
+        // 자바스크립트 통신을 위한 브릿지 추가
+        let callBackSampleScript : WKUserScript = WKUserScript(source: "callFunctionFromNative()", injectionTime: WKUserScriptInjectionTime.atDocumentEnd, forMainFrameOnly: true)  // natvie에서 web으로 호출할 함수
+        contentController.addUserScript(callBackSampleScript)
+        
+        // 웹에서 설정해놓은 콜백이름으로 추가
+        contentController.add(self, name: Constants.WebSchema.callBackHandlerKey)
+                
         // webview 설정
         webViewInit()
     }
@@ -52,8 +78,8 @@ class WebViewController: UIViewController {
             
         }
         
-        
-        
+        // TODO 캐시데이터 설정하는거 필요함
+                    
         // 좌우 스와이프 동작 시 뒤로가기, 앞으로가기 기능 활성화
         webviewreal.allowsBackForwardNavigationGestures = true
         
@@ -96,6 +122,21 @@ extension WebViewController : WKUIDelegate{
 extension WebViewController : WKNavigationDelegate {
     // 웹뷰가 웹페이지를 읽을지 말지 결정하는 메서드임
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        print("\(#function)")
+                
+        // url schema 자바스크립트 실행
+        // url schema가 앱에서 설정한 것과 동일한지 확인
+        if let url = navigationAction.request.url, let urlSchema = url.scheme, let urlHost = url.host, urlSchema.uppercased() == Constants.WebSchema.schema.uppercased() {
+            print("url : \(url)")
+            print("urlSchema : \(urlSchema)")
+            print("urlHost: \(urlHost)")
+            
+            decisionHandler(.cancel)
+            
+            // call back
+            webviewreal.evaluateJavaScript("callSchemaCallBack('\(urlHost)')")
+            return
+        }
         decisionHandler(.allow)
     }
     
@@ -125,6 +166,7 @@ extension WebViewController : WKNavigationDelegate {
         loadingImage.stopAnimating()
         indicatorView.stopAnimating()
     }
+        
 }
 
 // 스크롤 제어
@@ -142,6 +184,33 @@ extension WebViewController : UIScrollViewDelegate {
 
 extension WebViewController : WKScriptMessageHandler {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        
+        print("message name : \(message.name)")
+        // 앱에서 설정한 핸들러로 왔을 경우
+        if message.name == Constants.WebSchema.callBackHandlerKey {
+            print("message body : \(message.body)")
+            
+            // test callback 확인
+            if let dictionary = message.body as? Dictionary<String, AnyObject> {    // 만약 데이터를 json형태로 보낸경우
+                print(dictionary)
+                var popupPrintString = ""
+                dictionary.forEach{
+                    (key,value) in
+                        popupPrintString += "\(key):\(value)"
+                }
+                // 전달받은 데이터를 다시 콜백메시지로 보내줌
+                webviewreal.evaluateJavaScript("callNativeCallBack('\(popupPrintString)');"){
+                    (result, error) in
+                    if let error = error {
+                        print("error : \(error)")
+                    }else if let result = result as? String{
+                        print("result : \(result)")
+                    }
+                }
+            }else{  // 아닌 경우
+                webviewreal.evaluateJavaScript("callNativeCallBack('\(String(describing:message.body))');")
+            }
+            
+            
+        }
     }
 }

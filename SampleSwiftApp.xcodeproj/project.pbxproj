@@ -11,6 +11,7 @@
 		D90E27842A7A141800420E88 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90E27832A7A141800420E88 /* DetailViewController.swift */; };
 		D90E27872A7A41FC00420E88 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90E27862A7A41FC00420E88 /* DataManager.swift */; };
 		D927D3A72A78F7A7003AD49E /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D927D3A62A78F7A7003AD49E /* ComposeViewController.swift */; };
+		D97C09662A846C7500055485 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97C09652A846C7500055485 /* Constants.swift */; };
 		D98D3DFE2A835E05000A57A6 /* SharedConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D98D3DFD2A835E05000A57A6 /* SharedConfig.xcconfig */; };
 		D98D3E002A835E8C000A57A6 /* DebugConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D98D3DFF2A835E8B000A57A6 /* DebugConfig.xcconfig */; };
 		D98D3E022A835E97000A57A6 /* RelaeseConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D98D3E012A835E97000A57A6 /* RelaeseConfig.xcconfig */; };
@@ -34,6 +35,7 @@
 		D90E27832A7A141800420E88 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D90E27862A7A41FC00420E88 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		D927D3A62A78F7A7003AD49E /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
+		D97C09652A846C7500055485 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D98D3DFD2A835E05000A57A6 /* SharedConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = SharedConfig.xcconfig; sourceTree = "<group>"; };
 		D98D3DFF2A835E8B000A57A6 /* DebugConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DebugConfig.xcconfig; sourceTree = "<group>"; };
 		D98D3E012A835E97000A57A6 /* RelaeseConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = RelaeseConfig.xcconfig; sourceTree = "<group>"; };
@@ -82,9 +84,18 @@
 			path = data;
 			sourceTree = "<group>";
 		};
+		D97C09642A846C4600055485 /* constants */ = {
+			isa = PBXGroup;
+			children = (
+				D97C09652A846C7500055485 /* Constants.swift */,
+			);
+			path = constants;
+			sourceTree = "<group>";
+		};
 		D98D3DFC2A835DDF000A57A6 /* config */ = {
 			isa = PBXGroup;
 			children = (
+				D97C09642A846C4600055485 /* constants */,
 				D98D3DFD2A835E05000A57A6 /* SharedConfig.xcconfig */,
 				D98D3DFF2A835E8B000A57A6 /* DebugConfig.xcconfig */,
 				D98D3E012A835E97000A57A6 /* RelaeseConfig.xcconfig */,
@@ -272,6 +283,7 @@
 				D927D3A72A78F7A7003AD49E /* ComposeViewController.swift in Sources */,
 				D9F10E712A77374100AA2725 /* SceneDelegate.swift in Sources */,
 				D98D3E0D2A836701000A57A6 /* InternetConnectCheck.swift in Sources */,
+				D97C09662A846C7500055485 /* Constants.swift in Sources */,
 				D9F10E792A77374100AA2725 /* SampleSwiftApp.xcdatamodeld in Sources */,
 				D90E27842A7A141800420E88 /* DetailViewController.swift in Sources */,
 				D90E27872A7A41FC00420E88 /* DataManager.swift in Sources */,
