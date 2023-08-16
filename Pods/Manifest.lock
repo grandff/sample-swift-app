@@ -1,0 +1,20 @@
+PODS:
+  - IQKeyboardManagerSwift (6.5.12)
+  - SwiftyUUID (1.1.0)
+
+DEPENDENCIES:
+  - IQKeyboardManagerSwift
+  - SwiftyUUID
+
+SPEC REPOS:
+  trunk:
+    - IQKeyboardManagerSwift
+    - SwiftyUUID
+
+SPEC CHECKSUMS:
+  IQKeyboardManagerSwift: 371b08cb39664fb56030f5345c815a4ffc74bbc0
+  SwiftyUUID: 3cf8e9a58d5f32280766b8de9a0fd0a6e4040f68
+
+PODFILE CHECKSUM: dfac2898b0e066f59522dc8699d3e1bde5c7aa63
+
+COCOAPODS: 1.12.0

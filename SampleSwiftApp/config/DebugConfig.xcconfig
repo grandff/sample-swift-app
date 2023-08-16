@@ -9,3 +9,4 @@
 // https://help.apple.com/xcode/#/dev745c5c974
 
 #include "SharedConfig.xcconfig"
+#include "Pods/Target Support Files/Pods-SampleSwiftApp/Pods-SampleSwiftApp.debug.xcconfig"

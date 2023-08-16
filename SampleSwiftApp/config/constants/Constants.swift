@@ -12,5 +12,6 @@ struct Constants{
         static let schema = "sampleWebAppKdn"
         static let callBackHandlerKey = "callbackHandler"
         static let goToNatviePage = "navigateToPage"
+        static let coreDataCall = "coreDataCall"
     }
 }

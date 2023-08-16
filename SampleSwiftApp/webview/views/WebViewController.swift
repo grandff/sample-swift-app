@@ -7,6 +7,7 @@
 
 import UIKit
 import WebKit
+import SwiftyUUID
 
 class WebViewController: UIViewController {
             
@@ -16,6 +17,10 @@ class WebViewController: UIViewController {
     
     // webView main url
     let serverUrl = Bundle.main.object(forInfoDictionaryKey: "ServerUrl") as! String
+    
+    // toast view
+    private let toastView = ToastView(frame: CGRect(x: 20, y: UIScreen.main.bounds.height - 100, width: UIScreen.main.bounds.width - 40, height: 40))
+    
     
     // window.open webview
     var popupView : WKWebView!
@@ -56,10 +61,14 @@ class WebViewController: UIViewController {
         
         // 웹에서 설정해놓은 콜백이름으로 추가
         contentController.add(self, name: Constants.WebSchema.callBackHandlerKey)
+        contentController.add(self, name: Constants.WebSchema.coreDataCall)
         contentController.add(self, name: Constants.WebSchema.goToNatviePage)
                 
         // webview 설정
         webViewInit()
+        
+        // toast add
+        view.addSubview(toastView)
     }
     
     // 인터넷 연결 체크
@@ -160,6 +169,14 @@ extension WebViewController : WKNavigationDelegate {
         indicatorView.isHidden = true
         loadingImage.stopAnimating()
         indicatorView.stopAnimating()
+        
+        // toast show
+        toastView.setMessage("Web view init!")
+        toastView.alpha = 1.0
+        UIView.animate(withDuration: 2.0, delay: 2.0, options: .curveEaseOut, animations: {
+            self.toastView.alpha = 0.0
+        }, completion: nil)
+        
     }
     
     // 웹뷰가 콘텐츠 받는 중 오류가 났을 때 호출
@@ -221,6 +238,30 @@ extension WebViewController : WKScriptMessageHandler {
             if targetPage == "memoPage" {
                 moveToMemoPage()
             }
+        }
+        
+        // web <-> app core data 주고 받기
+        if message.name == Constants.WebSchema.coreDataCall {
+            // 현재 저장되어있는 토큰이 있는지 확인
+            let userInfo = UserInfoDataManager.shared.userInfo
+            var returnToken :String?
+                                    
+            if userInfo.count == 0{    // 토큰이 없다면 새로 생성해줌
+                let uuid = SwiftyUUID.UUID()
+                returnToken = uuid.CanonicalString()
+                UserInfoDataManager.shared.updateToken(returnToken)
+            }else{  // 토큰이 있다면 기존 토큰을 보내줌
+                returnToken = userInfo[0].token
+            }
+            // 해당 로직이 완료 되고 토스트메시지 부여
+            toastView.setMessage("Token is here!")
+            toastView.alpha = 1.0
+            UIView.animate(withDuration: 2.0, delay: 2.0, options: .curveEaseOut, animations: {
+                self.toastView.alpha = 0.0
+            }, completion: nil)
+            
+            // 현재 토큰 정보 리턴
+            webviewreal.evaluateJavaScript("returnAppToken('\(String(describing: returnToken))')")
         }
     }
     

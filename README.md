@@ -1,10 +1,98 @@
-# sample-swift-app
+# Sample Swift Web App 📄
 
-Sample Swift 기반 모바일웹앱
-웹뷰와 기본적인 앱 기능을 포함시킬거임
-MVVM 패턴으로 도전
+Swift 기반 모바일웹앱이다. 웹뷰를 포함해서 기본적인 앱 기능을 구현한다.
 
-## 강의 내용
+MVVM 패턴을 사용해서 개발한다.
+
+## 🔥 Features
+
+- [X] 기본환경설정
+- [X] 웹뷰띄우기
+- [X] 아이콘설정
+- [X] 스플래시스크린
+- [X] 코코아팟을 활용해서 외부 라이브러리 사용 및 기능 구현
+- [ ] 기본적인 게시판류 CRUD 구현
+- [ ] REST API와 통신
+- [ ] Push Message 구현하기
+- [X] 내부저장소 기능 활성화
+- [X] 자바스크립트 통신
+- [X] 웹뷰에서 버튼 클릭 시 앱화면으로 이동
+- [X] mvvm 패턴 사용
+- [X] 링크 클릭 시 앱으로 자동 이동 구현
+- [X] 환경변수 등 기본 설정
+- [X] 웹뷰로딩 시 로딩바 추가하기
+- [X] 코코아팟 기본 설정
+- [ ] 파일다운로드 기능
+- [X] url schema 추가
+- [ ] 스토리보드 안쓰고 SwiftUI 추가
+- [ ] 권한체크
+- [ ] 캐시 관리
+- [X] 소스 리팩토링, readme 정리
+- [X] 토스트메시지
+
+## 🚀 Project Structure
+
+```bash
+/
+├── config/
+│   ├── constants/
+│   │   └── Constnats.swift
+│   ├── SharedConfig.xconfig
+│   ├── DebugConfig.xconfig
+│   └── ReleaseConfig.xconfig
+├── data/
+│   ├── DataManager.swift
+│   └── UserInfoDataManager.swift
+├── webview/
+│   ├── constants/
+│   │   ├── loading.gif
+│   │   ├── InternetConnectCheck.swift
+│   │   └── ToastView.swift
+│   └── views/
+│       └── WebViewController.swift
+├── memo/
+│   ├── service/
+│   │   └── UIViewController+Alert.swift
+│   ├── views/
+│   │   ├── DetailViewController.siwft
+│   │   ├── MemoListTableViewController.swift
+│   │   └── ComposeViewController.swift
+│   └── model/
+│       ├── MemoModel.swift
+│       └── UserInfoModel.swift
+├── AppDelegate.swift
+├── SceneDelgate.swift
+├── Main.storyboard
+├── LaunchScreen.storyboard
+├── Assets
+├── Info.plist
+└── MainController.swift
+```
+
+## ⛺️ References
+
+[webview의 모든것](https://jingyu.tistory.com/2)
+
+[화면전환](https://velog.io/@wook4506/iOS-Swift-%ED%99%94%EB%A9%B4%EC%9D%84-%EC%A0%84%ED%99%98%ED%95%98%EB%8A%94-%EB%8B%A4%EC%96%91%ED%95%9C-%EB%B0%A9%EB%B2%95%EB%93%A4)
+
+[하이브리드앱](https://velog.io/@msi753/series/하이브리드앱)
+
+[배포환경설정](https://ios-development.tistory.com/660)
+
+## 💻 Tech Stack
+
+**Main Framework** - [Swift](https://developer.apple.com/kr/swift/)
+
+## 👨🏻‍💻 Running Locally
+
+```bash
+# cocoapods
+sudo gem install cocoapods
+pod init
+pod install
+```
+
+## ✨ kxcoding 강의
 
 ### 2. 프로젝트 설정
 
@@ -214,34 +302,10 @@ MVVM 패턴으로 도전
 - 뒤로가기 제스쳐 설정
 - 캐시 없음 (캐시 처리도 필요할듯?)
 
-## 소스구조
+## 📜 License
 
-- webview : webview 관련 기본 설정들
-- memo : kxcoding memo 강의에서 사용한 소스들
+Licensed under the MIT License, Copyright © 2023
 
-## TODO LIST
+---
 
-[X] 기본 환경설정
-
-[X] 바텀탭네비게이션 설정
-
-[X] 웹뷰 화면 설정
-
-[ ] 기본 CRUD 처리
-
-[ ] 웹뷰와 자바스크립트로 통신
-
-## Code Challenge
-
-[ ] full screen으로 이동했을 떄 뒤로가기 버튼 기능 구현
-
-## Refrences
-
-[webview의 모든것](https://jingyu.tistory.com/2)
-[화면전환](https://velog.io/@wook4506/iOS-Swift-%ED%99%94%EB%A9%B4%EC%9D%84-%EC%A0%84%ED%99%98%ED%95%98%EB%8A%94-%EB%8B%A4%EC%96%91%ED%95%9C-%EB%B0%A9%EB%B2%95%EB%93%A4)
-
-## command
-
-- cocoapods 설치
-  - sudo gem install cocoapods
-  - pod init
+Made by ME 👨🏻‍💻
